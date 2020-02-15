@@ -36,19 +36,24 @@ public class Main {
     }
 
     public static void runGame1() {
-        randomAnswer = random.nextInt(10);
-        counter = 0;
-
-        System.out.printf("Я загадал число от 0 до 9. Попроубуйте угадать за %d попытки.\nВведите число:", MAX_COUNT);
-        System.out.println();
-
         do {
-            if (counter == MAX_COUNT) {
-                System.out.printf("Вы проигарли! Загаданное число - %d!", randomAnswer);
-                break;
-            }
+            randomAnswer = random.nextInt(10);
+            counter = 0;
+
+            System.out.printf("Я загадал число от 0 до 9. Попроубуйте угадать за %d попытки.\nВведите число:", MAX_COUNT);
+            System.out.println();
+
+            do {
+                if (counter == MAX_COUNT) {
+                    System.out.printf("Вы проигарли! Загаданное число - %d!", randomAnswer);
+                    break;
+                }
+                answer = sc.nextInt();
+            } while (!compareAnswer(answer, randomAnswer));
+            System.out.println();
+            System.out.println("Повторить игру еще раз?\n1 - Да\n0 - Нет");
             answer = sc.nextInt();
-        } while (!compareAnswer(answer, randomAnswer));
+        }while (answer==1);
     }
 
     public static boolean compareAnswer(int userAnswer, int correctAnswer) {
