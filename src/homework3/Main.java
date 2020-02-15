@@ -3,6 +3,7 @@ package homework3;
 import java.util.Random;
 import java.util.Scanner;
 // Домашнее Задание 3
+// Сделано 2 задания
 
 public class Main {
 
