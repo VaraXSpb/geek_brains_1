@@ -1,4 +1,4 @@
-package lesson5;
+package homework5;
 
 public class Employee {
     String fullName;
